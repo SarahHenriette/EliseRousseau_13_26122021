@@ -1,7 +1,4 @@
-// import { Link, Route } from "react-router-dom";
-import Login from '../Login.js'
 import {  useDispatch } from "react-redux"
-// import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Form() {
@@ -28,38 +25,33 @@ function Form() {
             console.log(data.body.token)
             dispatch({type: "IS_TOKEN_ACTION", payload:{token: data.body.token}})
             navigate("/user")
-        }).catch(error=> 
-            console.log(error.message))
-
+        }).catch(error=> {
+            console.log(error.message)
+            navigate("/signin")
+            alert(error.message)
+        })
+            
     }
-
-
-
   
-        return (
-            <form id="form-signIn" onSubmit={handleSubmit}>
-                <div className="input-wrapper">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" id="username"/>
-                </div>
-                <div className="input-wrapper">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" />
-                </div>
-                <div className="input-remember">
-                    <input type="checkbox" id="remember-me" />
-                    <label htmlFor="remember-me" >Remember me</label>
-                </div>
+    return (
+        <form id="form-signIn" onSubmit={handleSubmit}>
+            <div className="input-wrapper">
+                <label htmlFor="username">Username</label>
+                <input type="text" id="username"/>
+            </div>
+            <div className="input-wrapper">
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" />
+            </div>
+            <div className="input-remember">
+                <input type="checkbox" id="remember-me" />
+                <label htmlFor="remember-me" >Remember me</label>
+            </div>
 
-                <button type="submit" className="sign-in-button">Sign In</button>
-            </form>
-        )
-    // }else {
-    //     return null
-    // }
+            <button type="submit" className="sign-in-button">Sign In</button>
+        </form>
+    )
  
-
-   
 }
 
 export default Form

@@ -1,14 +1,14 @@
 import './../style/App.css';
-import '../Login.js'
+import '../apis/Login.js'
 import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
 import Account from "../components/Account"
-import Profile from "./../Profile"
-import {  useSelector} from "react-redux"
+import Profile from "../apis/Profile"
+import {  useSelector } from "react-redux"
 
 
 function User() {
-    const state = useSelector((state)=> state[1]) //je récupére les state
+    const state = useSelector((state)=> state[1]) //je récupére les states
     const datas = Profile(state.token) // je recupére les donnéees de l'utilisateur en utilisant son token
     //Lorsque les données sont récup j'affiche la vue
     if(Object.keys(datas.data).length !== 0) {

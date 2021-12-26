@@ -23,21 +23,3 @@ function SignIn() {
 
 export default SignIn
 
-
-
-
-
-// function Home() {
-//   return (
-//     <div className="Home">
-//       <Nav/>
-//       <main>
-//         <Hero/>
-//         <Features/>
-//       </main>
-//       <Footer/>
-//     </div>
-//   );
-// }
-
-// export default Home;
