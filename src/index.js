@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Provider } from 'react-redux'
+import store from './redux/Store'
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import User from './pages/User';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+     <Router>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/signin" element={<SignIn/>} />
+          <Route path="/user" element={<User/>} />
+        </Routes>
+     </Router>
+    
+  </Provider>,
   document.getElementById('root')
 );
 
