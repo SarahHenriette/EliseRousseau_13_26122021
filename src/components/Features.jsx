@@ -3,7 +3,9 @@ import iconMoney from "./../img/icon-money.png"
 import iconSecurity from "./../img/icon-security.png"
 
 
-
+/**
+ * @return features of homepage
+ */
 function Features() {
     return (
         <section className="features">

@@ -1,5 +1,8 @@
 // import logo from "./../img/argentBankLogo.png"
 
+/**
+ * @return hero homepage
+ */
 function Hero() {
     return (
         <div className="hero">

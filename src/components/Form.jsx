@@ -1,6 +1,11 @@
 import {  useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
+import Profile from "../apis/Profile"
 
+
+/**
+ * @return form sign
+ */
 function Form() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -22,13 +27,13 @@ function Form() {
             })
         }).then(response => response.json()
         ).then((data) => {
-            console.log(data.body.token)
+            console.log(data)
             dispatch({type: "IS_TOKEN_ACTION", payload:{token: data.body.token}})
             navigate("/user")
         }).catch(error=> {
             console.log(error.message)
             navigate("/signin")
-            alert(error.message)
+            alert("Erreur de saisie")
         })
             
     }

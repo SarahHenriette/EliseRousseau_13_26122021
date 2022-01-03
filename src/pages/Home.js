@@ -7,7 +7,9 @@ import Features from "../components/Features"
 import Footer from "../components/Footer"
 
 
-
+/**
+ * @return homepage
+ */
 function Home() {
   return (
     <div className="home">

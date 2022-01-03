@@ -7,18 +7,30 @@ import Profile from "../apis/Profile"
 import {  useSelector } from "react-redux"
 
 
+
+/**
+ * @return user page
+ */
 function User() {
-    const state = useSelector((state)=> state[1]) //je récupére les states
-    const datas = Profile(state.token) // je recupére les donnéees de l'utilisateur en utilisant son token
+    const token = useSelector((state)=>  state[1].token ) //je récupére les states
+    const datas = Profile(token) // je recupére les donnéees de l'utilisateur en utilisant son token
     //Lorsque les données sont récup j'affiche la vue
-    if(Object.keys(datas.data).length !== 0) {
+    // console.log(useSelector((state)=> state[2]))
+    const datasUser = useSelector((state)=> state[2])
+    // console.log(datasUser)
+
+    if(datasUser !== undefined) {
         console.log(datas.data)
+        const firstname = datas.data.body.firstName
+        const lastname = datas.data.body.lastName
+        localStorage.setItem("firstname", firstname);
+        localStorage.setItem("lastname", lastname);
         return (
             <div className="user">
                 <Nav/>
                 <main className="main bg-dark">
                     <div className="header">
-                        <h1>Welcome back<br />Tony Jarvis!</h1>
+                        <h1>Welcome back<br />{firstname} {lastname}</h1>
                         <button className="edit-button">Edit Name</button>
                     </div>
                     <h2 className="sr-only">Accounts</h2>

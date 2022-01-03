@@ -1,4 +1,8 @@
 
+/**
+ * user balance (soldes de l'utilisateurs)
+ * @param {object} props -contains datas balance user
+ */
 function Account(props) {
     return (
         <section className="account">

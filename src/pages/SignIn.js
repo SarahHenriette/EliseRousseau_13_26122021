@@ -4,8 +4,11 @@ import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
 import Form from "./../components/Form"
 
-function SignIn() {
 
+/**
+ * @return Singin page
+ */
+function SignIn() {
     return (
         <div className="signIn">
             <Nav/>
