@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react"
 import {  useDispatch } from "react-redux"
 
-// console.log('hheehooo')
 
 /**
  * request post mock datas user

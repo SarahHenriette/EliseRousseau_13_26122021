@@ -4,22 +4,15 @@ import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
 import Account from "../components/Account"
 import Profile from "../apis/Profile"
-import {  useSelector } from "react-redux"
-
-
 
 /**
  * @return user page
  */
 function User() {
-    const token = useSelector((state)=>  state[1].token ) //je récupére les states
-    const datas = Profile(token) // je recupére les donnéees de l'utilisateur en utilisant son token
+    const datas = Profile(localStorage.getItem('token')) // je recupére les donnéees de l'utilisateur en utilisant son token
     //Lorsque les données sont récup j'affiche la vue
-    // console.log(useSelector((state)=> state[2]))
-    const datasUser = useSelector((state)=> state[2])
-    // console.log(datasUser)
 
-    if(datasUser !== undefined) {
+    if(Object.keys(datas.data).length !== 0) {
         console.log(datas.data)
         const firstname = datas.data.body.firstName
         const lastname = datas.data.body.lastName

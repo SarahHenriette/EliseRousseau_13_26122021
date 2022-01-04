@@ -1,6 +1,5 @@
 import {  useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
-import Profile from "../apis/Profile"
 
 
 /**
@@ -29,7 +28,9 @@ function Form() {
         ).then((data) => {
             console.log(data)
             dispatch({type: "IS_TOKEN_ACTION", payload:{token: data.body.token}})
+            localStorage.setItem('token', data.body.token)
             navigate("/user")
+
         }).catch(error=> {
             console.log(error.message)
             navigate("/signin")

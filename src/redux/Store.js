@@ -1,6 +1,4 @@
-import {  createStore, combineReducers } from 'redux'
-// import { composeWithDevTools } from "redux-devtools-extension";
-// import thunk from "redux-thunk"
+import {  createStore  } from 'redux'
 import "../pages/SignIn"
 
 
@@ -13,14 +11,11 @@ const initialState = [{
     datasUser: {}
 }]
 
-// const datasState= [{
-//     datas: {}
-// }]
-
 
 //action
 const IS_TOKEN_ACTION = "IS_TOKEN_ACTION"
 const DATAS_ACTIONS = "DATAS_ACTIONS"
+const LOGOUT_ACTIONS = "LOGOUT_ACTIONS"
 
 
 //reducer 
@@ -31,34 +26,23 @@ function funcReducer(state = initialState, action) {
                 ...action.payload,
                 isLogged: true,
             }]
-
         case DATAS_ACTIONS: 
             return [...state, {
+                ...action.payload,
+                isLogged: true,
                 datasUser: action.payload
+            }]
+        case LOGOUT_ACTIONS:
+            return [...state, {
+                token: '',
+                isLogged: false,
+                datasUser: {}
             }]
         default: 
             return state
     }
 }
 
-
-// const IS_DATAS_ACTION = "IS_DATAS_ACTION"
-
-// function datasReducer(state = datasState, action) {
-//     switch (action.type) {
-//         case IS_DATAS_ACTION:
-//             return [...state, {
-//                 ...action.payload,
-//             }]
-//         default: 
-//             return state
-//     }
-// }
-
-// const rootReducer = combineReducers({
-//     funcReducer,
-//     datasReducer,
-// })
 
 //store
 const store = createStore(
