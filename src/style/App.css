@@ -106,6 +106,21 @@ body, .signIn, .user {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
+#form-edit {
+  display: none;
+}
+
+#form-edit input[type="text" i] {
+  height: 32px;
+  margin: 5px;
+  padding-left: 10px;
+}
+#form-edit input[type="submit" i], #form-edit input[type="button" i] {
+  width: 100px;
+  height: 32px;
+  margin: 5px;
+}
+
 
 
 

@@ -33,7 +33,7 @@ function Nav() {
         </Link>
       <div>
       {datasUser.isLogged !== false && datasUser.datasUser !== undefined ?
-      <Link to="/user" className="main-nav-item"> <i className="fa fa-user-circle"></i> {datasUser.datasUser.token.body.firstName}</Link>:
+      <Link to="/user" className="main-nav-item"> <i className="fa fa-user-circle"></i> {datasUser.datasUser.datasUser.body.firstName}</Link>:
       <Link to="/signin" className="main-nav-item"> <i className="fa fa-user-circle"></i> Sign in</Link>}
            
       {datasUser.isLogged !== false ?

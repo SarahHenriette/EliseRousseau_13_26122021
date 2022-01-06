@@ -7,7 +7,7 @@ import {  useDispatch } from "react-redux"
  * @param {string} token 
  * @const {object} data - contain datas of user
  */
-export default function Profile(token) {
+export default function UpdateProfile(token) {
 
     const [data, setData] = useState({});
     const dispatch = useDispatch()
@@ -22,11 +22,15 @@ export default function Profile(token) {
             "Access-Control-Allow-Origin":"*",
             "Authorization": "Bearer" + token
         },
+        body: {
+            firstname: document.getElementById('firstname-form-edit').value,
+            lastname: document.getElementById('lastname-form-edit').value
+        }
 
     }).then(response => response.json()
     ).then((data) => {
         setData(data)
-        dispatch({type: "DATAS_ACTIONS", payload:{datasUser: data}})
+        dispatch({type: "DATAS_ACTIONS", payload:{token: data}})
 
     }).catch(error=> 
         console.log(error.message))
