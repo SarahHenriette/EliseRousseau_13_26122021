@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 /**
  * @return form sign
+ * @func handleSubmit - s'éxécute aà l'envoie du formulaire et récupére le token, l'enregistre dans le localstorage et redirige vers la page user
  */
-function Form() {
+function SignInForm() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
     //a l'envoi du form
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('form')
         fetch('http://localhost:3001/api/v1/user/login', {
             method: "POST",
             headers: {
@@ -26,7 +26,6 @@ function Form() {
             })
         }).then(response => response.json()
         ).then((data) => {
-            console.log(data)
             dispatch({type: "IS_TOKEN_ACTION", payload:{token: data.body.token}})
             localStorage.setItem('token', data.body.token)
             navigate("/user")
@@ -36,7 +35,6 @@ function Form() {
             navigate("/signin")
             alert("Erreur de saisie")
         })
-            
     }
   
     return (
@@ -60,4 +58,4 @@ function Form() {
  
 }
 
-export default Form
+export default SignInForm

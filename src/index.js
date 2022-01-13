@@ -18,7 +18,6 @@ ReactDOM.render(
           <Route path="/" element={<Home/>} />
           <Route path="/signin" element={<SignIn/>} />
           <Route path="/user" element={<User/>} />
-        
         </Routes>
      </Router>
     

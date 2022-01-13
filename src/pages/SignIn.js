@@ -1,8 +1,7 @@
 import './../style/App.css';
-// import Login from '../api.js'
 import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
-import Form from "./../components/Form"
+import SignInForm from "../components/SignInForm"
 
 
 /**
@@ -16,7 +15,7 @@ function SignIn() {
                 <section className="sign-in-content">
                     <i className="fa fa-user-circle sign-in-icon"></i>
                     <h1>Sign In</h1>
-                    <Form/>
+                    <SignInForm/>
                 </section>
             </main>
             <Footer/>

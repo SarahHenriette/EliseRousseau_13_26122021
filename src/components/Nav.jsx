@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 /**
  * @return nav
+ * @func handleSubmit - s'éxécute au clique du bouton Sign Out
  */
 function Nav() {
 
