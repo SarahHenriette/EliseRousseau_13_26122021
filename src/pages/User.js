@@ -13,8 +13,8 @@ import { useSelector } from "react-redux"
  * @func editForm - s'éxécute aau clique du bouton "Edit name" et affiche le formuaire
  */
 function User() {
-    Profile(localStorage.getItem('token')) // je recupére les donnéees de l'utilisateur en utilisant son token
-    const datasStore = useSelector(state => state[state.length-1])
+    Profile(localStorage.getItem('token')) // je recupére les donnéees de l'utilisateur en utilisant son token et les insére dans le store
+    const datasStore = useSelector(state => state[state.length-1]) //récupére les datas stocké dans le store 
 
     if(datasStore.datasUser !== undefined && datasStore.datasUser.datasUser !== undefined) {
         let firstname = datasStore.datasUser.datasUser.body.firstName

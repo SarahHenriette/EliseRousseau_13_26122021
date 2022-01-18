@@ -13,7 +13,7 @@ const initialState = [{
 
 
 //action
-const IS_TOKEN_ACTION = "IS_TOKEN_ACTION"
+const IS_LOGGED_ACTION = "IS_TOKEN_ACTION"
 const DATAS_ACTIONS = "DATAS_ACTIONS"
 const LOGOUT_ACTIONS = "LOGOUT_ACTIONS"
 
@@ -21,7 +21,7 @@ const LOGOUT_ACTIONS = "LOGOUT_ACTIONS"
 //reducer 
 function funcReducer(state = initialState, action) {
     switch (action.type) {
-        case IS_TOKEN_ACTION: 
+        case IS_LOGGED_ACTION: 
             return [...state, {
                 ...action.payload,
                 isLogged: true,

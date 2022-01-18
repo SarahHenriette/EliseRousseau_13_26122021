@@ -26,7 +26,7 @@ function SignInForm() {
             })
         }).then(response => response.json()
         ).then((data) => {
-            dispatch({type: "IS_TOKEN_ACTION", payload:{token: data.body.token}})
+            dispatch({type: "IS_LOGGED_ACTION", payload:{token: data.body.token}})
             localStorage.setItem('token', data.body.token)
             navigate("/user")
 

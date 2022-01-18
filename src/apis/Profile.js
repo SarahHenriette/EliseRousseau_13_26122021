@@ -12,7 +12,6 @@ export default function Profile(token) {
     const [data, setData] = useState({});
     const dispatch = useDispatch()
 
-
     useEffect(()=> {
         fetch('http://localhost:3001/api/v1/user/profile', {
         method: "POST",
