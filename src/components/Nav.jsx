@@ -4,7 +4,7 @@ import {  useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
 
 /**
- * @return nav
+ * @return navbar
  * @func handleSubmit - s'éxécute au clique du bouton Sign Out
  */
 function Nav() {
@@ -14,7 +14,6 @@ function Nav() {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  console.log(datasUser)
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('deco')
@@ -32,14 +31,18 @@ function Nav() {
             <img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
             <h1 className="sr-only">Argent Bank</h1>
         </Link>
-      <div>
+      <div>       
+        {/*if user is logged : display link with name  */}
       {datasUser.isLogged !== false && datasUser.datasUser !== undefined ?
       <Link to="/user" className="main-nav-item"> <i className="fa fa-user-circle"></i> {datasUser.datasUser.datasUser.body.firstName}</Link>:
-      <Link to="/signin" className="main-nav-item"> <i className="fa fa-user-circle"></i> Sign in</Link>}
-           
+      ""}
+
+        {/*if user is logged : display link sign Out  */}
       {datasUser.isLogged !== false ?
       <Link to="/" className="main-nav-item" onClick={handleSubmit}> <i className="fa fa-sign-out" ></i> Sign Out</Link>:
-      ""}
+      <Link to="/signin" className="main-nav-item"> <i className="fa fa-user-circle"></i> Sign in</Link>}
+
+
       </div>
     </nav>
     )
