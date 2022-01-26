@@ -13,7 +13,8 @@ function Nav() {
   const datasUser = useSelector((state)=> state[state.length-1])
   const dispatch = useDispatch()
   const navigate = useNavigate();
-
+  console.log(datasUser.isLogged)
+  console.log(datasUser.datasUser)
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('deco')
@@ -33,12 +34,13 @@ function Nav() {
         </Link>
       <div>       
         {/*if user is logged : display link with name  */}
-      {datasUser.isLogged !== false && datasUser.datasUser !== undefined ?
+       
+      {datasUser.isLogged !== false ?
       <Link to="/user" className="main-nav-item"> <i className="fa fa-user-circle"></i> {datasUser.datasUser.datasUser.body.firstName}</Link>:
       ""}
 
         {/*if user is logged : display link sign Out  */}
-      {datasUser.isLogged !== false ?
+      {datasUser.isLogged !== false  ?
       <Link to="/" className="main-nav-item" onClick={handleSubmit}> <i className="fa fa-sign-out" ></i> Sign Out</Link>:
       <Link to="/signin" className="main-nav-item"> <i className="fa fa-user-circle"></i> Sign in</Link>}
 

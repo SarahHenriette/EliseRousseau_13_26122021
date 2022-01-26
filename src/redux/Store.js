@@ -29,7 +29,6 @@ function funcReducer(state = initialState, action) {
         case DATAS_ACTIONS: 
             return [...state, {
                 ...action.payload,
-                isLogged: true,
                 datasUser: action.payload
             }]
         case LOGOUT_ACTIONS:

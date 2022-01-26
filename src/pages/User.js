@@ -6,6 +6,7 @@ import Account from "../components/Account"
 import Profile from "../apis/Profile"
 import EditForm from "../components/EditForm"
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
 
 
 /**
@@ -15,8 +16,9 @@ import { useSelector } from "react-redux"
 function User() {
     Profile(localStorage.getItem('token')) // je recupére les donnéees de l'utilisateur en utilisant son token et les insére dans le store
     const datasStore = useSelector(state => state[state.length-1]) //récupére les datas stocké dans le store 
-
-    if(datasStore.datasUser !== undefined && datasStore.datasUser.datasUser !== undefined) {
+    const navigate = useNavigate();
+console.log(datasStore)
+    if(datasStore.datasUser !== undefined && datasStore.datasUser.datasUser !== undefined && datasStore.datasUser.datasUser.status !== 401 ) {
         let firstname = datasStore.datasUser.datasUser.body.firstName
         let lastname = datasStore.datasUser.datasUser.body.lastName
         const editForm = (e) => {
@@ -42,7 +44,8 @@ function User() {
             </div>
         )
     }else {
-        return null
+        // navigate("/")
+        return null  
     }
 
 }

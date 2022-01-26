@@ -7,6 +7,8 @@ import './index.css';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import User from './pages/User';
+import Error from './pages/Error';
+
 import { useNavigate } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
@@ -18,6 +20,7 @@ ReactDOM.render(
           <Route path="/" element={<Home/>} />
           <Route path="/signin" element={<SignIn/>} />
           <Route path="/user" element={<User/>} />
+          <Route path="*" element={<Error/>}/>
         </Routes>
      </Router>
     

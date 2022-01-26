@@ -26,10 +26,8 @@ export default function Profile(token) {
     ).then((data) => {
         setData(data)
         dispatch({type: "DATAS_ACTIONS", payload:{datasUser: data}})
-
     }).catch(error=> 
         console.log(error.message))
-
     }, [])
 
     return {data}
