@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react"
 import {  useDispatch } from "react-redux"
 
-
 /**
  * request post mock datas user
  * @param {string} token 
@@ -11,7 +10,6 @@ export default function Profile(token) {
 
     const [data, setData] = useState({});
     const dispatch = useDispatch()
-
     useEffect(()=> {
         fetch('http://localhost:3001/api/v1/user/profile', {
         method: "POST",
@@ -21,7 +19,6 @@ export default function Profile(token) {
             "Access-Control-Allow-Origin":"*",
             "Authorization": "Bearer" + token
         },
-
     }).then(response => response.json()
     ).then((data) => {
         setData(data)

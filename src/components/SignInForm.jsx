@@ -1,7 +1,6 @@
 import {  useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
 
-
 /**
  * @return form sign
  * @func handleSubmit - runs when the form is sent and retrieves the token, saves it in localstorage and redirects to the user page
@@ -9,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 function SignInForm() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
-
-    //a l'envoi du form
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch('http://localhost:3001/api/v1/user/login', {
@@ -36,7 +33,6 @@ function SignInForm() {
             alert("Erreur de saisie")
         })
     }
-  
     return (
         <form id="form-signIn" onSubmit={handleSubmit}>
             <div className="input-wrapper">
@@ -51,11 +47,9 @@ function SignInForm() {
                 <input type="checkbox" id="remember-me" />
                 <label htmlFor="remember-me" >Remember me</label>
             </div>
-
             <button type="submit" className="sign-in-button">Sign In</button>
         </form>
     )
- 
 }
 
 export default SignInForm

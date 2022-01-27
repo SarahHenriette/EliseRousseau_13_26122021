@@ -1,4 +1,3 @@
-
 /**
  * user balance (soldes de l'utilisateurs)
  * @param {object} props -contains datas balance user

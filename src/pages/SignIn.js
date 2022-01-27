@@ -3,7 +3,6 @@ import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
 import SignInForm from "../components/SignInForm"
 
-
 /**
  * @return Singin page
  */

@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react"
 import {  useDispatch } from "react-redux"
 
-
 /**
  * request post mock datas user
  * @param {string} token 
@@ -11,8 +10,6 @@ export default function UpdateProfile(token) {
 
     const [data, setData] = useState({});
     const dispatch = useDispatch()
-
-
     useEffect(()=> {
         fetch('http://localhost:3001/api/v1/user/profile', {
         method: "POST",
@@ -26,7 +23,6 @@ export default function UpdateProfile(token) {
             firstname: document.getElementById('firstname-form-edit').value,
             lastname: document.getElementById('lastname-form-edit').value
         }
-
     }).then(response => response.json()
     ).then((data) => {
         setData(data)
@@ -34,7 +30,6 @@ export default function UpdateProfile(token) {
 
     }).catch(error=> 
         console.log(error.message))
-
     }, [])
 
     return {data}

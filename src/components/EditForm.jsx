@@ -8,12 +8,10 @@ import { useDispatch } from "react-redux"
  */
 function EditForm(props) {
     const dispatch = useDispatch()
-
     const cancelForm = () => {
         document.querySelector("#form-edit").style.display = "none"
         document.querySelector(".edit-button").style.display = "inline-block"
     }
-
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch('http://localhost:3001/api/v1/user/profile', {
@@ -33,11 +31,9 @@ function EditForm(props) {
             dispatch({type: "DATAS_ACTIONS", payload:{datasUser: data}})
             document.querySelector("#form-edit").reset()
             cancelForm()
-
         }).catch(error=> {
             alert("Erreur de saisie")
         })
-        
     }
     return (
         <form id="form-edit"  onSubmit={handleSubmit}>
@@ -47,7 +43,6 @@ function EditForm(props) {
             <input type="submit" value="Save"/>
             <input type="button" value="Cancel" onClick={cancelForm}/>
         </form>
-    
     )
 }
 
