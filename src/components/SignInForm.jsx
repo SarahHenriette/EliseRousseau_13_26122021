@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 /**
  * @return form sign
- * @func handleSubmit - s'éxécute aà l'envoie du formulaire et récupére le token, l'enregistre dans le localstorage et redirige vers la page user
+ * @func handleSubmit - runs when the form is sent and retrieves the token, saves it in localstorage and redirects to the user page
  */
 function SignInForm() {
     const dispatch = useDispatch()

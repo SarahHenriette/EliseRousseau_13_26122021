@@ -33,13 +33,13 @@ function Nav() {
             <h1 className="sr-only">Argent Bank</h1>
         </Link>
       <div>       
-        {/*if user is logged : display link with name  */}
-       
+        
+      {/*if user is logged : display link with name  */} 
       {datasUser.isLogged !== false ?
       <Link to="/user" className="main-nav-item"> <i className="fa fa-user-circle"></i> {datasUser.datasUser.datasUser.body.firstName}</Link>:
       ""}
 
-        {/*if user is logged : display link sign Out  */}
+      {/*if user is logged : display link sign Out  */}
       {datasUser.isLogged !== false  ?
       <Link to="/" className="main-nav-item" onClick={handleSubmit}> <i className="fa fa-sign-out" ></i> Sign Out</Link>:
       <Link to="/signin" className="main-nav-item"> <i className="fa fa-user-circle"></i> Sign in</Link>}

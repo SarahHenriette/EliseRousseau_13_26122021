@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux"
 
 /**
  * @return edit Form
- * @func handleSubmit - s'éxécute a l'envoi du formulaire et modifie, met à jour les datas du user
- * @func cancelForm - s'éxécute au clique du bouton "Cancel" et masque le formulaire
+ * @func handleSubmit - runs when the form is sent and modifies, updates the user's data
+ * @func cancelForm - runs when the "Cancel" button is clicked and hides the form
  * 
  */
 function EditForm(props) {

@@ -1,5 +1,5 @@
 import './../style/App.css';
-import '../apis/Login.js'
+// import '../apis/Login.js'
 import Nav from "../components/Nav.jsx"
 import Footer from "../components/Footer"
 import Account from "../components/Account"
@@ -14,10 +14,10 @@ import { useNavigate } from "react-router-dom";
  * @func editForm - s'éxécute aau clique du bouton "Edit name" et affiche le formuaire
  */
 function User() {
-    Profile(localStorage.getItem('token')) // je recupére les donnéees de l'utilisateur en utilisant son token et les insére dans le store
-    const datasStore = useSelector(state => state[state.length-1]) //récupére les datas stocké dans le store 
-    const navigate = useNavigate();
-console.log(datasStore)
+    // je recupére les donnéees de l'utilisateur en utilisant son token et les insére dans le store
+    Profile(localStorage.getItem('token'))
+    //récupére les datas stocké dans le store 
+    const datasStore = useSelector(state => state[state.length-1])
     if(datasStore.datasUser !== undefined && datasStore.datasUser.datasUser !== undefined && datasStore.datasUser.datasUser.status !== 401 ) {
         let firstname = datasStore.datasUser.datasUser.body.firstName
         let lastname = datasStore.datasUser.datasUser.body.lastName
@@ -25,7 +25,6 @@ console.log(datasStore)
             e.target.style.display= "none"
             document.querySelector("#form-edit").style.display = "block"
         }
-
         return (
             <div className="user">
                 <Nav/>

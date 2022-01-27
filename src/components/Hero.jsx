@@ -1,5 +1,3 @@
-// import logo from "./../img/argentBankLogo.png"
-
 /**
  * @return hero homepage
  */
