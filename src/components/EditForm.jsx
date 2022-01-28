@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 /**
  * @return edit Form
@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux"
  */
 function EditForm(props) {
     const dispatch = useDispatch()
+    const state = useSelector(state => state[state.length-1])
+    console.log(state)
     const cancelForm = () => {
         document.querySelector("#form-edit").style.display = "none"
         document.querySelector(".edit-button").style.display = "inline-block"
