@@ -2,7 +2,6 @@
 
 # ARGENT BANK
 Remede Agency is an OpenClassRoom project. It's a startup an agency specializing in the development of web applications.On this project we worked with Argent Bank, a new bank that needs to set up its application
-
 Use an API for a bank user account with React
 
 ## Prerequisites
@@ -21,7 +20,7 @@ Use an API for a bank user account with React
 4. yarn start or npm start
 
 
-## Compétences 
+## Compétences acquises
 - Implémenter un gestionnaire d'état dans une application React
 - Intéragir avec une API
 - Modéliser une API
